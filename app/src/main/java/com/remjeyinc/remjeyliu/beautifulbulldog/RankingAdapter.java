@@ -12,6 +12,7 @@ import io.realm.RealmResults;
 public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.BulldogViewHolder> {
 private Context context;
 private RealmResults<Vote> rankings;
+private RecyclerViewClickListener mListener;
 
     public RankingAdapter(Context context, RealmResults<Vote> dataSet) {
         this.context = context;
@@ -19,15 +20,15 @@ private RealmResults<Vote> rankings;
     }
 
     public static class BulldogViewHolder extends RecyclerView.ViewHolder{
-        public TextView bulldogView;
-        public TextView userView;
+        public TextView nameView;
+        public TextView ownerView;
         public TextView ratingView;
 
         private RecyclerViewClickListener mListener;
         public BulldogViewHolder(View v) {
             super(v);
-            bulldogView = v.findViewById(R.id.name_view);
-            userView = v.findViewById(R.id.owner_view);
+            nameView = v.findViewById(R.id.name_view);
+            ownerView = v.findViewById(R.id.owner_view);
             ratingView = v.findViewById(R.id.rating_view);
         }
     }
@@ -47,8 +48,10 @@ private RealmResults<Vote> rankings;
 
     @Override
     public void onBindViewHolder(BulldogViewHolder holder, int position) {
-        holder.bulldogView.setText(rankings.get(position).getBulldog().getName());
-        holder.userView.setText(rankings.get(position).getOwner().getUsername());
+        holder.nameView.setText(rankings.get(position).getBulldog().getName());
+        holder.ownerView.setText(rankings.get(position).getOwner().getUsername());
         holder.ratingView.setText(rankings.get(position).getRating());
+
+
     }
 }
