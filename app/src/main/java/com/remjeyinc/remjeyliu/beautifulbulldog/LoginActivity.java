@@ -43,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
                         realm.copyToRealmOrUpdate(user);
 
                         Intent intent = new Intent(getBaseContext(), MainActivity.class);
-                        intent.putExtra("username", user);
+                        intent.putExtra("username", user.getUsername());
                         startActivity(intent);
                     }
                 });

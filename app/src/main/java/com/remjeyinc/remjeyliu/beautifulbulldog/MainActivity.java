@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), NewBulldogActivity.class);
-                intent.putExtra("username",user);
+                intent.putExtra("username",user.getUsername());
                 startActivity(intent);
             }
         });

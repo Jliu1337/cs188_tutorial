@@ -1,6 +1,7 @@
 package com.remjeyinc.remjeyliu.beautifulbulldog;
 
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
 public class Vote extends RealmObject {
     private Bulldog bulldog;
@@ -30,4 +31,6 @@ public class Vote extends RealmObject {
     public void setRating(int rating) {
         this.rating = rating;
     }
+
+
 }
