@@ -19,7 +19,7 @@ public class TabPagerAdapter extends FragmentStatePagerAdapter {
                 BulldogListFragment tab1 = new BulldogListFragment();
                 return tab1;
             case 1:
-                RankingsFragment tab2 = new RankingsFragment();
+                RankingListFragment tab2 = new RankingListFragment();
                 return tab2;
             default:
                 return null;
